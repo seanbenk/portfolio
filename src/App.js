@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+import Nav from './Nav/Nav'
+import AboutMe from './AboutMe/AboutMe'
+import Scene from './Scene/Scene'
+import Footer from './Footer/Footer'
 
-function App() {
+export default function App(){
+
+  const [showNav, setShowNav] = useState(false)
+  const [showProjects, setShowProjects] = useState(false)
+
+  function toggleShowNav(){
+    setShowNav(prev => !prev)
+  }
+
+  function toggleShowProjects(){
+    setShowProjects(prev => !prev)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav showNav={showNav} toggleShowNav={toggleShowNav}/>
+      <AboutMe/>
+      <Scene showProjects={showProjects}/>
+      <Footer showProjects={showProjects} toggleShowProjects={toggleShowProjects}/>
     </div>
-  );
+  )
 }
-
-export default App;

@@ -1,0 +1,29 @@
+@import '../colors';
+
+footer{
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-wrapper{
+    background-color: $redOrange;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 5vw 5vw 0 0;
+    border-top: 1vh solid #c14b2e;
+}
+
+.footer-wrapper{
+    position: absolute;
+}
+
+.footer-wrapper:hover{
+    cursor: pointer;
+    background-color: #fa6641;
+}

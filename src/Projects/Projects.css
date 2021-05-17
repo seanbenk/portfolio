@@ -1,0 +1,8 @@
+.scene {
+  position: fixed;
+  width: 100%;
+  background-color: #008BF8;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+/*# sourceMappingURL=Projects.css.map */

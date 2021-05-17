@@ -1,0 +1,14 @@
+@import '../colors';
+
+.contact{
+    height: 100vh;
+    width: 100%;
+    background-color: $grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $darkGreen;
+    h1{
+        font-size: 3rem;
+    }
+}

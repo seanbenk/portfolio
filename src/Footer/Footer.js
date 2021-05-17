@@ -1,4 +1,4 @@
-import './Footer.css'
+import './Footer.scss'
 import { motion } from 'framer-motion'
 
 export default function Footer(props){

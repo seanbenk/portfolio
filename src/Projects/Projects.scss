@@ -1,0 +1,8 @@
+@import '../colors';
+
+.scene{
+    position: fixed;
+    width: 100%;
+    background-color: rgb(33, 33, 33);
+    transition: all 1s ease-in-out;
+}

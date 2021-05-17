@@ -1,0 +1,112 @@
+@import '../colors';
+
+.home{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-size: 3rem;
+        color: $darkGreen;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    h2{
+        font-size: 2rem;
+        color: $darkGreen;
+        width: 80%;
+    }
+    .down-arrow{
+        font-size:4rem;
+        position: absolute;
+        bottom: 16vh;
+    }
+}
+
+
+@media(min-width:900px){
+    .home{
+        background-color: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $grey;
+        h1{
+            color: $darkGreen;
+            font-size: 5rem;
+        }
+        h2{
+            color: $green;
+            font-size: 3rem;
+            span{
+                color: $darkGreen;
+                font-style: italic;
+            }
+        }
+}
+
+.home{
+    display: flex;
+}
+
+    // .opera-house{
+    //     display: none;
+    //     height: 100vh;
+    //     width: 100vw;
+    //     position: fixed;
+    //     z-index: -1;
+    //     background-color: blue;
+    //     .wing1{
+    //         position: absolute;
+    //         left: 22%;
+    //         bottom: 0;
+    //         background-color: white;
+    //         height: 65%;
+    //         width: 20%;
+    //         border-radius: 0 50% 0 0;
+    //         border: solid black 2px;
+    //     }
+    //     .wing2{
+    //         position: absolute;
+    //         left: 35%;
+    //         bottom: 0;
+    //         background-color: white;
+    //         height: 55%;
+    //         width: 20%;
+    //         border-radius: 0 50% 0 0;
+    //         border: solid black 2px;
+    //     }
+    //     .wing3{
+    //         position: absolute;
+    //         left: 45%;
+    //         bottom: 0;
+    //         background-color: white;
+    //         height: 45%;
+    //         width: 20%;
+    //         border-radius: 0 50% 0 0;
+    //         border: solid black 2px;
+    //     }
+    //     .wing4{
+    //         position: absolute;
+    //         left: 50%;
+    //         bottom: 0;
+    //         background-color: white;
+    //         height: 60%;
+    //         width: 20%;
+    //         border-radius: 50% 0 0 0;
+    //         border: solid black 2px;
+    //     }
+    //     .wing5{
+    //         position: absolute;
+    //         left: 55%;
+    //         bottom: 0;
+    //         background-color: white;
+    //         height: 45%;
+    //         width: 20%;
+    //         border-radius: 50% 0 0 0;
+    //         border: solid black 2px;
+    //     }
+    // }
+}

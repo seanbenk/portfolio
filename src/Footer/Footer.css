@@ -1,37 +1,33 @@
-footer{
-    position: fixed;
-    height: 15vh;
-    width: 100%;
-    bottom: 0;
+footer {
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.footer-wrapper{
-    background-color: #008BF8;
-    height: 100%;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    border-radius: 5vw 5vw 0 0;
-    border-top: 1vh solid #0070c6;
+.footer-wrapper {
+  background-color: #E95C3A;
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border-radius: 5vw 5vw 0 0;
+  border-top: 1vh solid #c14b2e;
 }
 
-.footer-wrapper{
-    position: absolute;
+.footer-wrapper {
+  position: absolute;
 }
 
-.footer-wrapper:hover{
-    cursor: pointer;
-    background-color: #1092f5;
+.footer-wrapper:hover {
+  cursor: pointer;
+  background-color: #fa6641;
 }
-
-/*
-Color Palette:
-======================
-orange: #F5B700
-blue: #008BF8
-pink: #DC0073
-green: #04E762
-darker green: #04D259
-purple: #6E46B6
-red/orange: #E95C3A
-*/
+/*# sourceMappingURL=Footer.css.map */

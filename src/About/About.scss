@@ -1,0 +1,49 @@
+@import '../colors';
+
+.about{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    h1{
+        font-size: 3rem;
+        color: $darkGreen;
+        width: 80%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    h2{
+        font-size: 2rem;
+        color: $darkGreen;
+        width: 80%;
+    }
+    .down-arrow{
+        font-size:4rem;
+        position: absolute;
+        bottom: 16vh;
+    }
+}
+
+
+@media(min-width:900px){
+    .about{
+        background-color: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $grey;
+        h1{
+            color: $darkGreen;
+            font-size: 5rem;
+        }
+        h2{
+            color: $green;
+            font-size: 3rem;
+            span{
+                color: $darkGreen;
+                font-style: italic;
+            }
+        }
+    }
+}

@@ -32,7 +32,7 @@ export default function Model(props) {
         scale={[0.33, 0.33, 0.33]}
         castShadow
       />
-      <mesh geometry={nodes.World.geometry} material={materials.Material} scale={[0.33, 0.33, 0.33]} receiveShadow />
+      <mesh geometry={nodes.World.geometry} material={materials.Material} scale={[0.33, 0.33, 0.33]} />
     </group>
   )
 }

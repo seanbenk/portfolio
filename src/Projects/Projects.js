@@ -1,12 +1,18 @@
 import './Projects.scss'
 import React, { Suspense, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, softShadows } from '@react-three/drei/core'
+import { OrbitControls, softShadows, PerspectiveCamera } from '@react-three/drei/core'
 // import BackDrop from '../Models/Backdrop'
 import { motion } from 'framer-motion'
-import WorldTest from '../Models/WorldTest'
+import Island from '../Models/Island'
 
-softShadows();
+// softShadows({
+//   frustum: 3.75, // Frustum width (default: 3.75) must be a float
+//   size: 0.005, // World size (default: 0.005) must be a float
+//   near: 9.5, // Near plane (default: 9.5) must be a float
+//   samples: 17, // Samples (default: 17) must be a int
+//   rings: 11, // Rings (default: 11) must be a int
+// })
 
 export default function Projects(props) {
 
@@ -27,22 +33,30 @@ export default function Projects(props) {
               forceUpdate()
           }}>Click</button> */}
       <Canvas 
-        camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 1.5] }} 
         style={{height:'100vh'}} id="projects" shadows>
-          
-          <pointLight 
-            intensity={0.3}     
+          <PerspectiveCamera
+            makeDefault
+            {...{ fov: 75, near: 0.1, far: 1000, position: [4, 2, 0] }} // All THREE.PerspectiveCamera props are valid
+          >
+            <pointLight
             castShadow
-            motion
-            ref={lightRef}
-            position={[orbitRef.current.object.position.x, orbitRef.current.object.position.y, orbitRef.current.object.position.z]}
+            intensity={1}
+            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024}
+            shadow-camera-far={50}
+            shadow-camera-left={-10}
+            shadow-camera-right={10}
+            shadow-camera-top={10}
+            shadow-camera-bottom={-10}
           />
+            <mesh />
+          </PerspectiveCamera>
+          {/* <ambientLight intensity={0.2}></ambientLight> */}
         <OrbitControls minDistance={1} maxDistance={10} ref={orbitRef}/>
         
         {/* <Backdrop/> */}
-        <ambientLight intensity={0.6}></ambientLight>
-        <Suspense fallback={<h1>Loading Profile...</h1>}>
-          <WorldTest/>
+        <Suspense fallback={'Loading 3d Models...'}>
+          <Island/>
         </Suspense>
       </Canvas>
     </motion.div>

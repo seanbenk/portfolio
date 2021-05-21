@@ -1,26 +1,12 @@
 import './Projects.scss'
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, softShadows, PerspectiveCamera } from '@react-three/drei/core'
-// import BackDrop from '../Models/Backdrop'
+import { OrbitControls, softShadows, PerspectiveCamera, ContactShadows, Sky } from '@react-three/drei/core'
 import { motion } from 'framer-motion'
-import Island from '../Models/Island'
+import Island from '../Models/Island-1'
 
-// softShadows({
-//   frustum: 3.75, // Frustum width (default: 3.75) must be a float
-//   size: 0.005, // World size (default: 0.005) must be a float
-//   near: 9.5, // Near plane (default: 9.5) must be a float
-//   samples: 17, // Samples (default: 17) must be a int
-//   rings: 11, // Rings (default: 11) must be a int
-// })
 
 export default function Projects(props) {
-
-    // const [, updateState] = React.useState();
-    // const forceUpdate = React.useCallback(() => updateState({}), []);
-
-    const orbitRef = useRef({object:{position:{x:1,y:1,z:1}}})
-    const lightRef = useRef()
 
   return (
     <motion.div className="scene" 
@@ -36,25 +22,33 @@ export default function Projects(props) {
         style={{height:'100vh'}} id="projects" shadows>
           <PerspectiveCamera
             makeDefault
-            {...{ fov: 75, near: 0.1, far: 1000, position: [4, 2, 0] }} // All THREE.PerspectiveCamera props are valid
+            {...{ fov: 75, near: 0.1, far: 1000, position: [4, 2, 0] }}
           >
-            <pointLight
-            castShadow
-            intensity={1}
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-            shadow-camera-far={50}
-            shadow-camera-left={-10}
-            shadow-camera-right={10}
-            shadow-camera-top={10}
-            shadow-camera-bottom={-10}
-          />
-            <mesh />
+            <directionalLight
+              castShadow
+              intensity={2}
+              color={0xffffff}
+              // shadow-mapSize-width={1024}
+              // shadow-mapSize-height={1024}
+              // shadow-camera-far={10}
+              // shadow-camera-left={-10}
+              // shadow-camera-right={10}
+              // shadow-camera-top={100}
+              // shadow-camera-bottom={-10}
+            />
           </PerspectiveCamera>
-          {/* <ambientLight intensity={0.2}></ambientLight> */}
-        <OrbitControls minDistance={1} maxDistance={10} ref={orbitRef}/>
-        
-        {/* <Backdrop/> */}
+          {/* <Sky
+            distance={45} // Camera distance (default=450000)
+            inclination={0.5} // Sun elevation angle from 0 to 1 (default=0)
+            azimuth={0.1} // Sun rotation around the Y axis from 0 to 1 (default=0.25)
+            turbidity={0.9}
+            rayleigh={3.5}
+            mieCoefficient={0.1}
+            {...props} // All three-stdlib/objects/Sky props are valid
+          /> */}
+          {/* <ambientLight intensity={0.1}></ambientLight> */}
+        <OrbitControls minDistance={1} maxDistance={10}/>
+        {/* <ContactShadows/> */}
         <Suspense fallback={'Loading 3d Models...'}>
           <Island/>
         </Suspense>

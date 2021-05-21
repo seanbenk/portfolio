@@ -10,7 +10,7 @@ import Footer from './Footer/Footer'
 export default function App(){
 
   const [showNav, setShowNav] = useState(false)
-  const [showProjects, setShowProjects] = useState(false)
+  const [showProjects, setShowProjects] = useState(true)
   const [navState, setNavState] = useState(1)
 
   function toggleShowNav(){

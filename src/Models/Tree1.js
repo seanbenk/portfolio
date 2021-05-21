@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/portfolioTest2/tree1.glb')
+  const { nodes, materials } = useGLTF('/portfoliotest2/tree1.glb')
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[1.23, 9.46, -5.47]}>
@@ -18,4 +18,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/portfolioTest2/tree1.glb')
+useGLTF.preload('/portfoliotest2/tree1.glb')

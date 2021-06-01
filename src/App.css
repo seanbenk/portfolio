@@ -1,3 +1,21 @@
 .App {
 
 }
+
+.page-enter {
+    transform: translateX(100%);
+}
+  
+.page-enter-active {
+    transform: translateX(0);
+    transition: all 500ms ease-in-out;
+}
+  
+.page-exit {
+    transform: translateX(0) translateY(-100%);
+}
+  
+.page-exit-active {
+    transform: translateX(-100%) translateY(-100%);
+    transition: all 500ms ease-in-out;
+}

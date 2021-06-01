@@ -7,43 +7,52 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/portfoliotest2/island-1.glb')
-  materials.islandMat.roughness = 1
+  const { nodes, materials } = useGLTF('/portfoliotest2/island-2.glb')
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh geometry={nodes.Island.geometry} material={materials.islandMat} receiveShadow/>
       <mesh
-        receiveShadow
         geometry={nodes.Water.geometry}
         material={materials.waterMat}
         position={[0, 0.56, -0.01]}
-        scale={[2.22, 2.22, 2.22]}
+        scale={[2.22, 2.22, 2.22]} receiveShadow
       />
       <mesh
         geometry={nodes.tree1.geometry}
         material={nodes.tree1.material}
         position={[0.98, 1.15, 0.78]}
-        scale={[0.05, 0.05, 0.05]}
-        castShadow
+        scale={[0.05, 0.05, 0.05]} castShadow
       />
       <mesh
         geometry={nodes.tree2.geometry}
         material={nodes.tree2.material}
         position={[0.92, 1.19, -0.12]}
         rotation={[-Math.PI, 0.77, -Math.PI]}
-        scale={[0.06, 0.06, 0.06]}
-        castShadow
+        scale={[0.06, 0.06, 0.06]} castShadow
       />
       <mesh
         geometry={nodes.tree3.geometry}
         material={nodes.tree3.material}
         position={[0.79, 1.01, -1.59]}
         rotation={[Math.PI, -1.02, Math.PI]}
-        scale={[0.04, 0.04, 0.04]}
-        castShadow
+        scale={[0.04, 0.04, 0.04]} castShadow
+      />
+      <mesh
+        geometry={nodes.Car.geometry}
+        material={materials.carMat}
+        position={[0.63, 0.71, -1.45]}
+        rotation={[-0.75, 0.86, 2.23]}
+        scale={[0.08, 0.08, 0.08]} castShadow
+      />
+      <mesh
+        geometry={nodes.Character001.geometry}
+        material={materials.characterMat}
+        position={[0.89, 0.91, 0.16]}
+        rotation={[0, 1.44, 0]}
+        scale={[0.01, 0.01, 0.01]} castShadow
       />
     </group>
   )
 }
 
-useGLTF.preload('/portfoliotest2/island-1.glb')
+useGLTF.preload('/portfoliotest2/island-2.glb')

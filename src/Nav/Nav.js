@@ -1,5 +1,6 @@
 import './Nav.scss'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const container = {
     hidden: { opacity: 0 },
@@ -17,16 +18,12 @@ const container = {
     show: { opacity: 1, x: 0 }
   }
 
-export default function Nav(props){
-
-    function getClassName(num){
-        return num === props.navState?'selected':''
-    }
+export default function Nav({ showNav, toggleShowNav, navItemClicked }){
 
     return (
-        <motion.nav className={props.showNav?"show-nav":""}
+        <motion.nav className={showNav?"show-nav":""}
         initial={false}
-        animate={props.showNav?{
+        animate={showNav?{
             right: 0,
             top: 0,
             height: '100vh',
@@ -41,8 +38,8 @@ export default function Nav(props){
         }
         }>
             <div className="burger-wrapper">
-                <div className={props.showNav? "burger-container  show-nav":"burger-container"} 
-                onClick={props.toggleShowNav}>
+                <div className={showNav? "burger-container  show-nav":"burger-container"} 
+                onClick={toggleShowNav}>
                     <div className="burger-1"></div>
                     <div className="burger-2"></div>
                     <div className="burger-3"></div>
@@ -51,10 +48,10 @@ export default function Nav(props){
             <motion.ul 
             variants={container}
             initial="hidden"
-            animate={props.showNav?'show':'hidden'}>
-                <motion.li variants={item} onClick={() => props.setCurrPage(1)} className={getClassName(1)}>Home</motion.li>
-                <motion.li variants={item} onClick={() => props.setCurrPage(2)} className={getClassName(2)}>About Me</motion.li>
-                <motion.li variants={item} onClick={() => props.setCurrPage(3)} className={getClassName(3)}>Contact</motion.li>
+            animate={showNav?'show':'hidden'}>
+                <motion.li onClick={navItemClicked} variants={item}><Link to='/'>Home</Link></motion.li>
+                <motion.li onClick={navItemClicked} variants={item}><Link to='/about'>About Me</Link></motion.li>
+                <motion.li onClick={navItemClicked} variants={item}><Link to='/contact'>Contact</Link></motion.li>
             </motion.ul>
         </motion.nav>
     )

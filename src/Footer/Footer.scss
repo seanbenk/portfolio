@@ -10,20 +10,35 @@ footer{
 }
 
 .footer-wrapper{
-    background-color: $redOrange;
+    background-color: $green;
     height: 100%;
     width: 100%;
     display: grid;
     place-items: center;
     border-radius: 3vw 3vw 0 0;
-    border-top: 1vh solid #c14b2e;
+    border-top: 1vh solid $darkGreen;
 }
 
 .footer-wrapper{
     position: absolute;
+    h2{
+        font-family: $font1;
+        font-size: 2rem;
+        font-weight: 700;
+        transition: all 200ms ease-in-out;
+    }
 }
 
 .footer-wrapper:hover{
     cursor: pointer;
-    background-color: #fa6641;
+    background-color: $lightGreen;
+    h2{
+        font-size: 2.3rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .footer-wrapper{
+        width: 80%;
+    }
 }

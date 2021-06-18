@@ -1,6 +1,6 @@
 import './Nav.scss'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const container = {
     hidden: { opacity: 0 },
@@ -49,9 +49,15 @@ export default function Nav({ showNav, toggleShowNav, navItemClicked }){
             variants={container}
             initial="hidden"
             animate={showNav?'show':'hidden'}>
-                <motion.li onClick={navItemClicked} variants={item}><Link to='/'>Home</Link></motion.li>
-                <motion.li onClick={navItemClicked} variants={item}><Link to='/about'>About Me</Link></motion.li>
-                <motion.li onClick={navItemClicked} variants={item}><Link to='/contact'>Contact</Link></motion.li>
+                <motion.li onClick={navItemClicked} variants={item}>
+                    <NavLink exact to='/' activeClassName="selected">Home</NavLink>
+                </motion.li>
+                <motion.li onClick={navItemClicked} variants={item}>
+                    <NavLink exact to='/about' activeClassName="selected">About Me</NavLink>
+                </motion.li>
+                <motion.li onClick={navItemClicked} variants={item}>
+                    <NavLink exact to='/contact' activeClassName="selected">Contact</NavLink>
+                </motion.li>
             </motion.ul>
         </motion.nav>
     )

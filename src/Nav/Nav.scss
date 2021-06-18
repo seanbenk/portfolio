@@ -1,5 +1,4 @@
 @import '../colors';
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 nav{
     position: fixed;
@@ -48,14 +47,13 @@ nav{
     li{
         width: 80%;
         list-style: none;
-        font-family: 'Quicksand', sans-serif;
+        font-family: $font1;
         font-weight: 700;
         font-size: 2rem;
         transition: all 200ms ease-in-out;
-    }
-    
-    li.selected{
-        color: $yellow;
+        .selected{
+            color: $yellow;
+        }
     }
     
     li:hover{

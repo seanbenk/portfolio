@@ -6,17 +6,20 @@
     display: flex;
     flex-direction:column;
     align-items: center;
+    justify-content: center;
+    background-color: $background;
     h1{
         font-size: 3rem;
-        color: $darkGreen;
+        color: $darkBlue;
         width: 80%;
-        margin-top: 10%;
-        margin-bottom: 10%;
+        margin-bottom: 5vh;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
     }
-    h2{
-        font-size: 2rem;
-        color: $darkGreen;
+    p{
+        font-size: 1.3rem;
+        color: $blue;
         width: 80%;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
     }
     .down-arrow{
         font-size:4rem;
@@ -25,24 +28,13 @@
     }
 }
 
-
 @media(min-width:900px){
     .about{
-        background-color: none;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
         h1{
-            color: $darkGreen;
             font-size: 5rem;
         }
-        h2{
-            color: $green;
-            font-size: 3rem;
-            span{
-                color: $darkGreen;
-                font-style: italic;
-            }
+        p{
+            font-size: 2rem;
         }
     }
 }

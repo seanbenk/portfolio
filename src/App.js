@@ -7,6 +7,7 @@ import Contact from './Contact/Contact'
 import Projects from './Projects/Projects'
 import NotFound from './NotFound/NotFound'
 import Footer from './Footer/Footer'
+import './additionalStyles/Arrow.scss'
 import { Switch, Route } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
@@ -14,6 +15,7 @@ export default function App(){
 
   const [showNav, setShowNav] = useState(false)
   const [showProjects, setShowProjects] = useState(false)
+  const [showProjectsInstructions, setShowProjectsInstructions] = useState(true)
 
   function toggleShowNav(){
     setShowNav(prev => !prev)
@@ -39,7 +41,7 @@ export default function App(){
         in={true}
             key={location.key}
             classNames="page"
-            timeout={500}>
+            timeout={1000}>
           <Switch location={location}>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About}/>
@@ -49,7 +51,7 @@ export default function App(){
           </CSSTransition>
         </TransitionGroup>
       )}/>
-      <Projects showProjects={showProjects}/>
+      <Projects showProjects={showProjects} showProjectsInstructions={showProjectsInstructions} setShowProjectsInstructions={setShowProjectsInstructions}/>
       <Footer showProjects={showProjects} toggleShowProjects={toggleShowProjects}/>
     </div>
   )

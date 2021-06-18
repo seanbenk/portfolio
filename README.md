@@ -1,3 +1,3 @@
 ### Website Link:
 https://seanbenkenstein.com
-https://seanbenk.github.io/portfo
+https://seanbenk.github.io/portfolio/
